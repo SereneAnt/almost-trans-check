@@ -1,6 +1,6 @@
 # almost-trans-check
 
-Evidence of `edu.mines.jtk.util.Almost` failing `Comparable` contract.  
+`edu.mines.jtk.util.Almost` `Comparable.compareTo` contract validation.  
 
 # Requirements
 
