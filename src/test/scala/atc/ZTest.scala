@@ -21,7 +21,7 @@ object AlmostCmpComparableSpec extends DefaultRunnableSpec {
      * <tt>y.compareTo(x)</tt> throws an exception.)
      */
     testM("Test `edu.mines.jtk.util.Almost::cmp` symmetry (anticommutation)") {
-      check(Gen.anyFloat, Gen.anyFloat) { (x, y) =>
+      checkN(100_000_000)(Gen.anyFloat, Gen.anyFloat) { (x, y) =>
         val xy = cmp(x, y)
         val yx = cmp(y, x)
         assert(xy)(equalTo(-yx))
@@ -34,7 +34,7 @@ object AlmostCmpComparableSpec extends DefaultRunnableSpec {
      * <tt>x.compareTo(z)&gt;0</tt>.
      */
     testM("Test `edu.mines.jtk.util.Almost::cmp` transitivity") {
-      check(Gen.anyFloat, Gen.anyFloat, Gen.anyFloat) { (x, y, z) =>
+      checkN(100_000_000)(Gen.anyFloat, Gen.anyFloat, Gen.anyFloat) { (x, y, z) =>
         val xy = cmp(x, y)
         val yz = cmp(y, z)
         val xz = cmp(x, z)
@@ -48,7 +48,7 @@ object AlmostCmpComparableSpec extends DefaultRunnableSpec {
      * all <tt>z</tt>.
      */
     testM("Test `edu.mines.jtk.util.Almost::cmp` 'zero case'") {
-      checkN(10_000_000)(Gen.anyFloat, Gen.anyFloat, Gen.anyFloat) { (x, y, z) =>
+      checkN(100_000_000)(Gen.anyFloat, Gen.anyFloat, Gen.anyFloat) { (x, y, z) =>
         val xy = cmp(x, y)
         val yz = cmp(y, z)
         val xz = cmp(x, z)

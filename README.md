@@ -12,3 +12,13 @@ Evidence of `edu.mines.jtk.util.Almost` failing `Comparable` contract.
 ```console
 sbt test
 ```
+
+# Results
+
+```console
++ TransitivitySpec
+  + Test `edu.mines.jtk.util.Almost::cmp` symmetry (anticommutation)
+  + Test `edu.mines.jtk.util.Almost::cmp` transitivity
+  + Test `edu.mines.jtk.util.Almost::cmp` 'zero case'
+Ran 3 tests in 1 h 33 m 34 s: 3 succeeded, 0 ignored, 0 failed
+```
